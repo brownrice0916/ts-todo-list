@@ -30,9 +30,6 @@ export const useTodos = () => {
       ]);
       return { previousTodos };
     },
-    // onSuccess: () => {
-    //   queryClient.invalidateQueries({ queryKey: [QUERY_KEY] });
-    // },
   });
 
   const updateMutation = useMutation({
@@ -74,9 +71,6 @@ export const useTodos = () => {
     onError: (error) => {
       console.error(error.message);
     },
-    // onSuccess: () => {
-    //   queryClient.invalidateQueries({ queryKey: [QUERY_KEY] });
-    // },
   });
 
   const addTodoDebounced = debounce(addMutation.mutate, 500);

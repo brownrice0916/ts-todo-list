@@ -1,11 +1,12 @@
 import { TodoWithId } from "../types/types";
 import { useTodos } from "../hooks/useTodos";
+import { PropsWithChildren } from "react";
 
 interface TodoItemProps {
   isDone: boolean;
 }
 
-const TodoItem: React.FC<TodoItemProps> = ({ isDone }) => {
+const Todos = ({ isDone }: PropsWithChildren<TodoItemProps>) => {
   const { todos, isLoading, error, updateTodo, deleteTodo } = useTodos();
 
   const handleDeleteTodo = (todoId: number) => {
@@ -67,4 +68,4 @@ const TodoItem: React.FC<TodoItemProps> = ({ isDone }) => {
   );
 };
 
-export default TodoItem;
+export default Todos;
